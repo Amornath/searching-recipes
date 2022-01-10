@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Recipe from './Recipe';
 
 import './App.css';
+import { Container } from 'react-bootstrap';
 
 const App = () => {
   const App_ID = "657875ee";
@@ -33,9 +34,10 @@ const App = () => {
    }
 
   return (
+    <Container>
     <div className="App">
       <form onSubmit={getSearch} className="search-form">
-        <input className="search-bar" type="text" value={search} onChange= {updateSearch}/>
+        <input placeholder='Search your favourite recepie' className="search-bar text-center" type="text" value={search} onChange= {updateSearch}/>
         <button className="search-button" type="submit">Search</button>
       </form>
       <div className="recipes">
@@ -48,6 +50,7 @@ const App = () => {
       ))}
       </div>
     </div>
+    </Container>
   );
 }
 
